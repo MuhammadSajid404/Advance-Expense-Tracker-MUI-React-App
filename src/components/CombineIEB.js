@@ -151,22 +151,6 @@ export const CombineIEB = () => {
             resetForm()
         }
 
-        // const getIncome = () => {
-        //     let income = 0
-        //     for (var i = 0; i < transactions.length; i++) {
-        //       if (transactions[i].amount > 0) income += transactions[i].amount
-        //     }
-        //     console.log(income)
-        //     return income
-        //   }
-        
-        // const getExpense = () => {
-        //     let expense = 0
-        //     for (var i = 0; i < transactions.length; i++) {
-        //       if (transactions[i].amount < 0) expense += transactions[i].amount
-        //     }
-        //     return expense
-        //   }
         const income = amounts
     .filter(item => item > 0)
     .reduce((acc, item) => (acc += item), 0)
@@ -233,8 +217,8 @@ export const CombineIEB = () => {
             <TextField
             value = {text}
             placeholder = 'Enter Description'
-            defaultValue="Default Value"
             onChange = {e => setText (e.target.value)}
+            style={{marginLeft: '10px', marginRight: '10px'}}
             />
 
     <FormLabel className={classes.transactionFormLabel}>Amount</FormLabel>
@@ -242,22 +226,19 @@ export const CombineIEB = () => {
             value = {amount}
             placeholder = 'Enter Amount'
             onChange = {e => setAmount (e.target.value)}
-            // className={classes.textField}
+            style={{marginLeft: '10px', marginRight: '10px'}}
             />
     
-    {/* <button className="btn">Add transaction</button> */}
-    {/* <Grid item lg={6} xs={12}> */}
     <Button variant="contained" onClick={incomeHandler} className={classes.btnIncome}>
     ADD INCOME
   </Button>
-  {/* </Grid> */}
-  {/* <Grid item lg={6} xs={12}> */}
+  
   <Button variant="contained" onClick={expenseHandler} className={classes.btnExpense}>
     ADD EXPENSE
   </Button>
-  {/* </Grid> */}
+  
 </form>
-{/* </Paper> */}
+
 </Grid>
 </Grid>
     </div>
