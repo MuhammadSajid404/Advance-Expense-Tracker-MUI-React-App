@@ -75,6 +75,7 @@ const useStyles = makeStyles({
         fontWeight: '600',
         color: '#163172',
         marginTop: '1.7rem',
+        marginLeft: '0.7rem',
         marginBottom: '0.2rem',
       }
     })
